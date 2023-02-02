@@ -18,6 +18,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "Ed25519", dependencies: ["CEd25519"]),
-        .target(name: "CEd25519", dependencies: [])
+        .target(name: "CEd25519", dependencies: []),
+        .testTarget(name: "Ed25519Tests", dependencies: ["Ed25519"])
     ]
 )

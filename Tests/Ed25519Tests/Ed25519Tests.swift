@@ -3,14 +3,14 @@ import XCTest
 
 class Ed25519Tests: XCTestCase {
     func testSeed() throws {
-        let seed = try Seed()
+        let seed = Seed()
         XCTAssertEqual(32, seed.bytes.count)
         XCTAssertNotEqual([UInt8](repeating: 0, count: 32), seed.bytes)
     }
     
     
     func testSignAndVerify() throws {
-        let seed = try Seed()
+        let seed = Seed()
         let keyPair = KeyPair(seed: seed)
         let message = [UInt8]("Hello World!".utf8)
         let otherMessage = [UInt8]("Bonan tagon!".utf8)
@@ -26,8 +26,8 @@ class Ed25519Tests: XCTestCase {
     }
 
     func testKeyExchange() throws {
-        let keyPair = KeyPair(seed: try Seed())
-        let otherKeyPair = KeyPair(seed: try Seed())
+        let keyPair = KeyPair(seed: Seed())
+        let otherKeyPair = KeyPair(seed: Seed())
         
         XCTAssertNotEqual(keyPair.privateKey.bytes, otherKeyPair.privateKey.bytes)
         XCTAssertNotEqual(keyPair.publicKey.bytes, otherKeyPair.publicKey.bytes)

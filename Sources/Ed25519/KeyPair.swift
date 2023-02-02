@@ -1,6 +1,6 @@
 import CEd25519
 
-public final class KeyPair {
+public struct KeyPair: Sendable {
     public let publicKey: PublicKey
     public let privateKey: PrivateKey
 
@@ -9,7 +9,7 @@ public final class KeyPair {
         self.privateKey = privateKey
     }
 
-    public convenience init(seed: Seed) {
+    public init(seed: Seed) {
         var pubBuffer = [UInt8](repeating: 0, count: 32)
         var privBuffer = [UInt8](repeating: 0, count: 64)
 
@@ -27,7 +27,7 @@ public final class KeyPair {
                   privateKey: PrivateKey(unchecked: privBuffer))
     }
 
-    public convenience init(publicKey: [UInt8], privateKey: [UInt8]) throws {
+    public init(publicKey: [UInt8], privateKey: [UInt8]) throws {
         let pub = try PublicKey(publicKey)
         let priv = try PrivateKey(privateKey)
         self.init(publicKey: pub, privateKey: priv)

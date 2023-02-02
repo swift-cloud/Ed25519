@@ -1,9 +1,9 @@
 import CEd25519
 
-public final class PublicKey {
+public struct PublicKey: Sendable {
     private let buffer: [UInt8]
     
-    public convenience init(_ bytes: [UInt8]) throws {
+    public init(_ bytes: [UInt8]) throws {
         guard bytes.count == 32 else {
             throw Ed25519Error.invalidPublicKeyLength
         }

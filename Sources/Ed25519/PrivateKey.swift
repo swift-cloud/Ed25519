@@ -1,6 +1,6 @@
 import CEd25519
 
-public final class PrivateKey {
+public struct PrivateKey: Sendable {
     private let buffer: [UInt8]
     
     public init(_ bytes: [UInt8]) throws {

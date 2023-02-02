@@ -1,6 +1,6 @@
 import CEd25519
 
-public class Seed {
+public struct Seed: Sendable {
     private let buffer: [UInt8]
 
     init(unchecked bytes: [UInt8]) {
@@ -15,7 +15,7 @@ public class Seed {
         buffer = bytes
     }
 
-    public convenience init() throws {
+    public init() throws {
         var buffer = [UInt8](repeating: 0, count: 32)
         
         let result = buffer.withUnsafeMutableBufferPointer {

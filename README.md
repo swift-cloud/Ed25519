@@ -2,11 +2,8 @@ Ed25519 for Swift 5.7
 =====================
 
 This project is a Swift adaptation of the portable C [Ed25519](http://ed25519.cr.yp.to/)
-implementation available [here](https://github.com/orlp/ed25519).  
-The complete functionality,
+implementation available [here](https://github.com/orlp/ed25519). The complete functionality, 
 including the key exchange and scalar addition functions are available.
-
-On both macOS and Linux systems, `/dev/urandom` will be used for generating seeds.
 
 Installation
 ------------
@@ -21,11 +18,10 @@ API
 ---
 
 ```swift
-let seed = try Seed()
+let seed = Seed()
 ```
 
-Creates a 32 byte random seed for key generation.  
-May throw `Ed25519Error.seedGenerationFailed` in case there was a problem with reading from `/dev/urandom`.
+Creates a 32 byte random seed for key generation.
 
 ```swift
 let seedBytes: [UInt8] = [ ... ]

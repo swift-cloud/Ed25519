@@ -14,7 +14,7 @@ Installation
 To integrate the library in your SwiftPM project, add the following dependency to Package.swift:
 
 ```swift
-.Package(url: "https://github.com/swift-cloud/Ed25519", branch: "main")
+.package(url: "https://github.com/swift-cloud/Ed25519", from: "1.0.0")
 ```
 
 API

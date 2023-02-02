@@ -1,8 +1,5 @@
-Ed25519 for Swift 3.x
+Ed25519 for Swift 5.7
 =====================
-
-![Swift](http://img.shields.io/badge/swift-3.0-brightgreen.svg) [![CircleCI](https://circleci.com/gh/vzsg/ed25519.svg?style=shield)](https://circleci.com/gh/vzsg/ed25519)
-
 
 This project is a Swift adaptation of the portable C [Ed25519](http://ed25519.cr.yp.to/)
 implementation available [here](https://github.com/orlp/ed25519).  
@@ -17,7 +14,7 @@ Installation
 To integrate the library in your SwiftPM project, add the following dependency to Package.swift:
 
 ```swift
-.Package(url: "https://github.com/vzsg/ed25519.git", majorVersion: 0, minor: 1)
+.Package(url: "https://github.com/swift-cloud/Ed25519", branch: "main")
 ```
 
 API

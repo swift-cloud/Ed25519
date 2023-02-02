@@ -10,10 +10,12 @@ public struct Seed: Sendable {
         self.bytes = bytes
     }
 
-    public init() throws {
-        let bytes = Array(repeating: 0, count: secureSeedLength).map { _ in
-            return UInt8.random(in: UInt8.min ... UInt8.max)
+    public init() {
+        self.bytes = Array<UInt8>(unsafeUninitializedCapacity: secureSeedLength) { pointer, size in
+            for i in 0 ..< pointer.count {
+                pointer[i] = UInt8.random(in: .min ... .max)
+            }
+            size = pointer.count
         }
-        try self.init(bytes: bytes)
     }
 }

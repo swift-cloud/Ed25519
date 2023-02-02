@@ -1,5 +1,5 @@
-Ed25519 for Swift 5.7
-=====================
+Ed25519
+=======
 
 This project is a Swift adaptation of the portable C [Ed25519](http://ed25519.cr.yp.to/)
 implementation available [here](https://github.com/orlp/ed25519). The complete functionality, 
